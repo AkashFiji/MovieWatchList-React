@@ -19,12 +19,6 @@ body {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container {
-    width: 540px;
-  }
-}
-
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -125,16 +119,9 @@ header .nav-links li:last-child {
 
 /* Add Page */
 .add-content {
-  padding: 20px;
-  max-width: 100%;
+  padding: 50px 0;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .add-content {
-    padding: 50px 0;
-    max-width: 600px;
-  }
 }
 
 .add-content .input-wrapper input {
@@ -144,13 +131,7 @@ header .nav-links li:last-child {
   border-radius: 5px;
   border: none;
   color: var(--white);
-  font-size: 1rem;
-}
-
-@media (min-width: 576px) {
-  .add-content .input-wrapper input {
-    font-size: 1.25rem;
-  }
+  font-size: 1.25rem;
 }
 
 .results {
@@ -165,14 +146,7 @@ header .nav-links li:last-child {
 
 .result-card {
   display: flex;
-  flex-direction: column;
   margin-bottom: 20px;
-}
-
-@media (min-width: 576px) {
-  .result-card {
-    flex-direction: row;
-  }
 }
 
 .result-card .poster-wrapper img,
@@ -193,29 +167,17 @@ header .nav-links li:last-child {
 }
 
 .result-card .info .title {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--primary);
   font-weight: 600;
   margin: 0;
 }
 
-@media (min-width: 576px) {
-  .result-card .info .title {
-    font-size: 1.25rem;
-  }
-}
-
 .result-card .info .release-date {
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--primary);
   margin: 0;
-}
-
-@media (min-width: 576px) {
-  .result-card .info .release-date {
-    font-size: 1.25rem;
-  }
 }
 
 .result-card .controls button {
@@ -224,13 +186,7 @@ header .nav-links li:last-child {
 
 /* Movie Page */
 .movie-page {
-  padding: 20px;
-}
-
-@media (min-width: 768px) {
-  .movie-page {
-    padding: 30px 0;
-  }
+  padding: 30px 0;
 }
 
 .movie-page .header {
@@ -244,16 +200,10 @@ header .nav-links li:last-child {
   display: block;
   background-color: var(--secondary);
   padding: 5px 15px;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   border-radius: 999px;
   color: var(--primary);
-}
-
-@media (min-width: 768px) {
-  .count-pill {
-    font-size: 1.125rem;
-  }
 }
 
 .movie-page .heading {
@@ -263,14 +213,8 @@ header .nav-links li:last-child {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-}
-
-@media (min-width: 576px) {
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
 }
 
 @media (min-width: 992px) {
@@ -309,8 +253,9 @@ header .nav-links li:last-child {
 
 .movie-card .inner-card-controls {
   display: inline;
+  background-color: red;
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8);
@@ -341,12 +286,118 @@ header .nav-links li:last-child {
 
 .movie-page .no-movies {
   color: #c4c4c4;
-  font-size: 1.5rem;
+  font-size: 3rem;
   text-align: center;
 }
 
-@media (min-width: 576px) {
-  .movie-page .no-movies {
-    font-size: 3rem;
+/* Responsive --- ### ---*/
+/* Extra Small Mobile (320px – 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  header .inner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  header .nav-links li {
+    margin: 0 0 10px;
+  }
+
+  .result-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .result-card .poster-wrapper img {
+    width: 100px;
+    height: 150px;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+}
+
+/* Small Tablets (481px – 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .movie-page .heading {
+    font-size: 1.8rem;
+  }
+
+  .result-card .poster-wrapper img {
+    width: 120px;
+    height: 180px;
+  }
+}
+
+/* Small Laptops (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .movie-page .heading {
+    font-size: 2rem;
+  }
+
+  .container {
+    max-width: 700px;
+  }
+}
+
+/* Standard Desktops (1025px – 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+}
+
+/* Large Desktops (1281px – 1440px) */
+@media (min-width: 1281px) and (max-width: 1440px) {
+  .movie-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .container {
+    max-width: 1170px;
+  }
+
+  .movie-card .inner-card-controls {
+    bottom: 15px;
   }
 }
